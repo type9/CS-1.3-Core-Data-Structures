@@ -27,7 +27,7 @@ def dec36(digit):
     try:
         return int(digit)
     except:
-        return string.ascii_lowercase.index(digit) + DIGIT # + 1 is for array index offset
+        return string.ascii_lowercase.index(digit) + DIGIT + 1 # + 1 is for array index offset
 
 def decode(digits, base):
     """Decode given digits in given base to number in base 10.
@@ -103,8 +103,6 @@ def main():
     """Read command-line arguments and convert given digits between bases."""
     import sys
     args = sys.argv[1:]  # Ignore script file name
-    print(encode(42, 16))
-    print(decode(encode(42, 16), 16))
     if len(args) == 3:
         digits = args[0]
         base1 = int(args[1])
