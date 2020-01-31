@@ -66,17 +66,23 @@ def binary_search_recursive(array, item, left=None, right=None):
     if left == None:
         left = 0
     if right == None:
-        right = len(array)
+        right = len(array) - 1
     
     mid = ((right - left) // 2) + left
     this_item = array[mid]
 
     if this_item == item:
         return mid
-    elif mid == left or mid == right:
+    elif left == right: # range is 1 ele
         return None
 
     if this_item > item:
-        return binary_search_recursive(array, item, left, mid)
+        return binary_search_recursive(array, item, left, mid - 1)
     else:
-        return binary_search_recursive(array, item, mid, right)
+        return binary_search_recursive(array, item, mid + 1, right)
+
+
+if __name__ == "__main__":
+    names = ['Alex', 'Brian', 'Julia', 'Kojin', 'Nabil'] #, 'Nick', 'Winnie']
+    # binary search should return the index of each item in the list
+    print(binary_search(names, 'Nabil'))
