@@ -1,4 +1,26 @@
 {
   "binarytree_test.py": true,
-  "strings_test.py::StringsTest::test_find_all_indexes_with_matching_patterns": true
+  "hashtable_test.py::HashTableTest::test_contains": true,
+  "hashtable_test.py::HashTableTest::test_delete": true,
+  "hashtable_test.py::HashTableTest::test_init": true,
+  "hashtable_test.py::HashTableTest::test_items": true,
+  "hashtable_test.py::HashTableTest::test_keys": true,
+  "hashtable_test.py::HashTableTest::test_length": true,
+  "hashtable_test.py::HashTableTest::test_resize": true,
+  "hashtable_test.py::HashTableTest::test_set_and_get": true,
+  "hashtable_test.py::HashTableTest::test_set_twice_and_get": true,
+  "hashtable_test.py::HashTableTest::test_size": true,
+  "hashtable_test.py::HashTableTest::test_values": true,
+  "queue_test.py::QueueTest::test_dequeue": true,
+  "queue_test.py::QueueTest::test_enqueue": true,
+  "queue_test.py::QueueTest::test_front": true,
+  "queue_test.py::QueueTest::test_init": true,
+  "queue_test.py::QueueTest::test_init_with_list": true,
+  "queue_test.py::QueueTest::test_length": true,
+  "stack_test.py::StackTest::test_init": true,
+  "stack_test.py::StackTest::test_init_with_list": true,
+  "stack_test.py::StackTest::test_length": true,
+  "stack_test.py::StackTest::test_peek": true,
+  "stack_test.py::StackTest::test_pop": true,
+  "stack_test.py::StackTest::test_push": true
 }
