@@ -59,7 +59,7 @@ class LinkedList(object):
         Best and worst case running time: 0(n)"""
         return self.size
 
-    def get_at_index(self, index):
+    def get_at_index(self, index, return_node = False):
         """Return the item at the given index in this linked list, or
         raise ValueError if the given index is out of range of the list size.
         Best case running time: 0(1) if index is 0
@@ -72,6 +72,8 @@ class LinkedList(object):
         while this_index < index:
             node = node.next
             this_index += 1
+        if return_node:
+            return node
         return node.data
 
     def insert_at_index(self, index, item):
@@ -111,6 +113,7 @@ class LinkedList(object):
         if self.is_empty():
             # Assign head to new node
             self.head = new_node
+            self.tail = new_node
         else:
             # Otherwise insert new node after tail
             self.tail.next = new_node
@@ -127,6 +130,7 @@ class LinkedList(object):
         if self.is_empty():
             # Assign tail to new node
             self.tail = new_node
+            self.head = new_node
         else:
             # Otherwise insert new node before head
             new_node.next = self.head
