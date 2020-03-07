@@ -6,7 +6,7 @@ class SetTest(unittest.TestCase):
     def test_init(self):
         set = Set()
         assert set.size == 0
-        assert set.contains(1) is False
+        assert (1 in set) is False
     
     def test_init_with_list_contains(self):
         list = [1, 2, 3, 4, 5]
@@ -14,7 +14,7 @@ class SetTest(unittest.TestCase):
 
         assert set.size == 5
         for item in list:
-            assert set.contains(item) is True
+            assert (item in set) is True
     
     def test_add_contains(self):
         list = [1, 2, 3, 4, 5]
@@ -24,7 +24,7 @@ class SetTest(unittest.TestCase):
             set.add(item)
         assert set.size == 5
         for item in list:
-            assert set.contains(item) is True
+            assert (item in set) is True
     
     def test_remove(self):
         list = [1, 2, 3, 4, 5]
