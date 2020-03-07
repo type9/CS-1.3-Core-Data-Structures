@@ -4,7 +4,9 @@ DEBUG = True
 
 def find_index(text, pattern, breadth=0, depth=0):
     """Return the starting index of the first occurrence of pattern in text,
-    or None if not found."""
+    or None if not found.
+    O(n) T*P time complexity 
+    where T is length of text and P pattern length"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
@@ -28,7 +30,9 @@ def find_index(text, pattern, breadth=0, depth=0):
         return find_index(text, pattern, breadth, depth + 1)
 
 def contains(text, pattern):
-    """Return a boolean indicating whether pattern occurs in text."""
+    """Return a boolean indicating whether pattern occurs in text.
+    O(n) T*P time complexity 
+    where T is length of text and P pattern length"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     index = find_index(text, pattern)
@@ -38,7 +42,9 @@ def contains(text, pattern):
 
 def find_all_indexes(text, pattern):
     """Return a list of starting indexes of all occurrences of pattern in text,
-    or an empty list if not found."""
+    or an empty list if not found.
+    O(n) T*P time complexity 
+    where T is length of text and P pattern length"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # TODO: Implement find_all_indexes here (iteratively and/or recursively)
@@ -50,6 +56,10 @@ def find_all_indexes(text, pattern):
             break
         indexes.append(index)
         last_breadth = index + 1
+    
+    if pattern == "":
+        indexes.pop(-1)
+        return indexes
     return indexes
 
 def test_string_algorithms(text, pattern):
