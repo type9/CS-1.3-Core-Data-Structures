@@ -27,21 +27,18 @@ class BinaryTreeNode(object):
         """Return the height of this node (the number of edges on the longest
         downward path from this node to a descendant leaf node).
         TODO: Best and worst case running time: 0(n) worse, 0(1) best depending how many levels that tree has"""
-        left_h = 0
-        right_h = 0
-
-        if self.left:
-            left_h = 1 + self.left.height()
-        if self.right:
-            right_h = 1 + self.right.height()
-
-        if left_h > right_h:
-            return left_h
-        elif right_h > left_h:
-            return right_h
-        else:
+        if self.left is None and self.right is None:
             return 0
 
+        left_height = 0
+        right_height = 0
+
+        if self.left is not None:
+            left_height = self.left.height()
+        if self.right is not None:
+            right_height = self.right.height()
+
+        return max(left_height, right_height) + 1
 
 class BinarySearchTree(object):
 
